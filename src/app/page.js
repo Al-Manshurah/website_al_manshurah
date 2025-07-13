@@ -1,103 +1,162 @@
+'use client';
+
+import Navigation from "@/components/Navigation";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const ustadzList = [
+    {
+      name: "Ustadz Ahmad Zain",
+      role: "Ketua Yayasan",
+      img: "/images/ustadz1.jpg",
+    },
+    {
+      name: "Ustadzah Siti Maryam",
+      role: "Pengajar Tahfidz",
+      img: "/images/ustadzah1.jpg",
+    },
+    {
+      name: "Ustadz Farid Syah",
+      role: "Pembina Kajian",
+      img: "/images/ustadz2.jpg",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  return (
+    <>
+      <Navigation />
+      <main className="p-6 space-y-12 max-w-5xl mx-auto">
+        {/* Pendahuluan */}
+        <section>
+          <h1 className="text-3xl font-bold mb-2 text-green-800">
+            Pendahuluan
+          </h1>
+          <p className="text-gray-700 leading-relaxed">
+            Yayasan Pendidikan Islam Al Manshurah adalah lembaga non-profit yang
+            didirikan untuk mengembangkan pendidikan dan dakwah Islam
+            berdasarkan Al-Qur&apos;an dan Sunnah. Kami berkomitmen untuk mencetak
+            generasi yang berakhlak mulia, berilmu, dan bermanfaat bagi umat.
+          </p>
+        </section>
+
+        {/* Hero Pengenalan */}
+        <section className="relative bg-[url('/images/hero-bg.jpg')] bg-cover bg-center text-white py-20 px-6 text-center">
+          <div className="bg-black/50 absolute inset-0" />
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              Yayasan Pendidikan Islam Al Manshurah
+            </h1>
+            <p className="text-lg md:text-xl mb-6">
+              Membina umat dengan ilmu, amal, dan akhlak mulia
+            </p>
+            <a
+              href="#tentang"
+              className="inline-block bg-green-600 hover:bg-green-700 transition px-6 py-3 rounded-full font-semibold shadow-md"
+            >
+              Pelajari Lebih Lanjut
+            </a>
+          </div>
+        </section>
+
+        {/* Tentang */}
+        <section className="py-16 px-6 bg-gray-50" id="tentang">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-4">Pendahuluan</h2>
+            <p className="text-gray-700 leading-relaxed text-justify">
+              Yayasan Al Manshurah didirikan untuk memperkuat peran dakwah Islam
+              yang berlandaskan pemahaman Ahlus Sunnah wal Jama&apos;ah. Kegiatan
+              utamanya meliputi pendidikan, kajian keislaman, dan program
+              sosial. Dengan dukungan para pengasuh dan masyarakat, Al Manshurah
+              terus berupaya menebarkan manfaat secara konsisten dan
+              terstruktur.
+            </p>
+          </div>
+        </section>
+
+        {/* Pengenalan */}
+        <section className="py-16 px-6">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/pondok.jpg"
+              alt="Pondok Al Manshurah"
+              width={600}
+              height={400}
+              className="rounded-xl shadow-lg w-full h-auto object-cover"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+            <div>
+              <h2 className="text-3xl font-bold mb-4">
+                Pengenalan Al Manshurah
+              </h2>
+              <ul className="list-disc list-inside text-gray-700 space-y-2">
+                <li>
+                  <strong>Visi:</strong> Mencetak generasi berilmu dan berakhlak
+                </li>
+                <li>
+                  <strong>Misi:</strong> Menyebarkan dakwah melalui pendidikan
+                  dan kegiatan sosial
+                </li>
+                <li>
+                  <strong>Fokus:</strong> Kajian keislaman, pendidikan santri,
+                  pelatihan ekonomi mandiri
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Profil Pengajar */}
+        <section className="py-16 px-6 bg-gray-100">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">
+              Profil Pengasuh &amp; Pengajar
+            </h2>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {ustadzList.map((u, i) => (
+                <div
+                  key={i}
+                  className="bg-white rounded-xl shadow-lg p-4 text-center"
+                >
+                  <Image
+                    src={u.img}
+                    alt={u.name}
+                    width={112}
+                    height={112}
+                    className="mx-auto rounded-full object-cover mb-4"
+                  />
+                  <h3 className="font-semibold text-lg">{u.name}</h3>
+                  <p className="text-green-700 text-sm">{u.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Donasi */}
+        <section className="py-16 px-6 text-center bg-green-700 text-white">
+          <h2 className="text-3xl font-bold mb-4">
+            Mari Bersama Membangun Generasi Islami
+          </h2>
+          <p className="mb-6">
+            Salurkan donasi Anda atau bergabung dalam program sosial dan
+            pendidikan kami
+          </p>
+          <div className="flex justify-center gap-4 flex-wrap">
+            <Link
+              href="/donasi/laporan"
+              className="bg-white text-green-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+            >
+              Donasi Sekarang
+            </Link>
+            <Link
+              href="/tentang"
+              className="bg-white text-green-700 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition"
+            >
+              Tentang Kami
+            </Link>
+          </div>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
