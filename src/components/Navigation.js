@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useRef } from "react";
+import { gitRepoS, imgLogoS } from "../utils/utilStrings";
 
 export default function Navigation() {
   const [openMenu, setOpenMenu] = useState("");
@@ -33,14 +34,29 @@ export default function Navigation() {
   const arrow = <span className="text-xs">▼</span>;
 
   return (
-    <header className="bg-green-700 text-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-3">
-          <Image src="/logo.png" alt="Logo" width={40} height={40} />
-          <span className="font-bold text-lg tracking-wide">Yayasan Al Manshurah</span>
+    <header className="bg-green-950 text-white shadow-md">
+      <div className="flex items-center justify-between bg-white border-b-8 border-green-700">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-black">
+          {/* Logo */}
+          <div className="flex items-center gap-3">
+            <Image
+              src={`${gitRepoS}${imgLogoS}`}
+              alt="Logo"
+              width={96}
+              height={96}
+            />
+            <div className="flex flex-col gap-0">
+              <div className="fKufam font-bold text-xl h-fit max-h-fit opacity-70">
+                Halaqah Ilmu
+              </div>
+              <div className="fKufam font-extrabold text-3xl h-fit max-h-fit">
+                Al Manshurah
+              </div>
+            </div>
+          </div>
         </div>
-
+      </div>
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Menu Navigation */}
         <nav className="flex gap-6 items-center relative z-50">
           {/* Beranda */}
@@ -49,7 +65,10 @@ export default function Navigation() {
             onMouseEnter={() => handleMouseEnter("beranda")}
             onMouseLeave={handleMouseLeave}
           >
-            <button onClick={() => toggleMenu("beranda")} className={parentBtnClass}>
+            <button
+              onClick={() => toggleMenu("beranda")}
+              className={parentBtnClass}
+            >
               Beranda {arrow}
             </button>
             <div
@@ -59,9 +78,15 @@ export default function Navigation() {
                   : "opacity-0 scale-95 invisible"
               }`}
             >
-              <Link href="/" className="hover:text-green-700">Pendahuluan</Link>
-              <Link href="/beranda/pengenalan" className="hover:text-green-700">Pengenalan Al Manshurah</Link>
-              <Link href="/beranda/pengasuh" className="hover:text-green-700">Profil Pengasuh/Pengajar</Link>
+              <Link href="/" className="hover:text-green-700">
+                Pendahuluan
+              </Link>
+              <Link href="/beranda/pengenalan" className="hover:text-green-700">
+                Pengenalan Al Manshurah
+              </Link>
+              <Link href="/beranda/pengasuh" className="hover:text-green-700">
+                Profil Pengasuh/Pengajar
+              </Link>
             </div>
           </div>
 
@@ -71,7 +96,10 @@ export default function Navigation() {
             onMouseEnter={() => handleMouseEnter("kbm")}
             onMouseLeave={handleMouseLeave}
           >
-            <button onClick={() => toggleMenu("kbm")} className={parentBtnClass}>
+            <button
+              onClick={() => toggleMenu("kbm")}
+              className={parentBtnClass}
+            >
               Kegiatan Da’wah (KBM) {arrow}
             </button>
             <div
@@ -97,7 +125,10 @@ export default function Navigation() {
             onMouseEnter={() => handleMouseEnter("program")}
             onMouseLeave={handleMouseLeave}
           >
-            <button onClick={() => toggleMenu("program")} className={parentBtnClass}>
+            <button
+              onClick={() => toggleMenu("program")}
+              className={parentBtnClass}
+            >
               Program Ekonomi Mandiri {arrow}
             </button>
             <div
@@ -107,7 +138,9 @@ export default function Navigation() {
                   : "opacity-0 scale-95 invisible"
               }`}
             >
-              <Link href="/program/madu" className="hover:text-green-700">Madu</Link>
+              <Link href="/program/madu" className="hover:text-green-700">
+                Madu
+              </Link>
             </div>
           </div>
 
@@ -117,7 +150,10 @@ export default function Navigation() {
             onMouseEnter={() => handleMouseEnter("donasi")}
             onMouseLeave={handleMouseLeave}
           >
-            <button onClick={() => toggleMenu("donasi")} className={parentBtnClass}>
+            <button
+              onClick={() => toggleMenu("donasi")}
+              className={parentBtnClass}
+            >
               Donasi & Laporan Keuangan {arrow}
             </button>
             <div
@@ -127,9 +163,15 @@ export default function Navigation() {
                   : "opacity-0 scale-95 invisible"
               }`}
             >
-              <Link href="/donasi/laporan" className="hover:text-green-700">Laporan</Link>
-              <Link href="/donasi/gaji" className="hover:text-green-700">Gaji Pengajar</Link>
-              <Link href="/donasi/waqaf" className="hover:text-green-700">Rencana Tanah Waqaf</Link>
+              <Link href="/donasi/laporan" className="hover:text-green-700">
+                Laporan
+              </Link>
+              <Link href="/donasi/gaji" className="hover:text-green-700">
+                Gaji Pengajar
+              </Link>
+              <Link href="/donasi/waqaf" className="hover:text-green-700">
+                Rencana Tanah Waqaf
+              </Link>
             </div>
           </div>
 

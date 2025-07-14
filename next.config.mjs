@@ -1,18 +1,17 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
 const nextConfig = {
-  output: 'export',
+  output: "export",
   trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
-  assetPrefix: './',
-}
+  images: { unoptimized: true },
 
-export default nextConfig
+  // LOKAL
+//   assetPrefix: "./",
+//   assetPrefix: "/website_al_manshurah_publish/",
 
+  // UPLOAD GITHUB
+    basePath:  isProd ? "/website_al_manshurah_publish":'',
+    assetPrefix:  isProd ? "/website_al_manshurah_publish/":'',
+};
 
-
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {};
-
-// export default nextConfig;
+export default nextConfig;

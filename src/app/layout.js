@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="id">
       <body className="font-sans bg-white text-gray-800">
         {children}
-        <footer className="bg-gray-100 text-center p-4 text-sm text-gray-500 mt-10">
+        <footer className="bg-green-950 text-center py-32 px-4 text-sm text-white/30 mt-10">
           &copy; 2025 Yayasan Al Manshurah
         </footer>
       </body>
