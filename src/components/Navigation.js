@@ -58,37 +58,40 @@ export default function Navigation() {
       </div>
       <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Menu Navigation */}
-        <nav className="flex gap-6 items-center relative z-50">
+        <nav className="flex items-center relative z-50">
+          <Link href="/tentang" className="">
+            Beranda
+          </Link>
           {/* Beranda */}
-          <div
+          {/* <div
             className="relative"
             onMouseEnter={() => handleMouseEnter("beranda")}
             onMouseLeave={handleMouseLeave}
-          >
-            <button
+          > */}
+          {/* <button
               onClick={() => toggleMenu("beranda")}
               className={parentBtnClass}
             >
               Beranda {arrow}
-            </button>
-            <div
+            </button> */}
+          {/* <div
               className={`${dropdownClass} ${
                 openMenu === "beranda"
                   ? "opacity-100 scale-100 visible"
                   : "opacity-0 scale-95 invisible"
               }`}
             >
-              <Link href="/" className="hover:text-green-700">
+              <Link href="/" className="">
                 Pendahuluan
               </Link>
-              <Link href="/beranda/pengenalan" className="hover:text-green-700">
+              <Link href="/beranda/pengenalan" className="">
                 Pengenalan Al Manshurah
               </Link>
-              <Link href="/beranda/pengasuh" className="hover:text-green-700">
+              <Link href="/beranda/pengasuh" className="">
                 Profil Pengasuh/Pengajar
               </Link>
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
 
           {/* KBM */}
           <div
@@ -138,7 +141,7 @@ export default function Navigation() {
                   : "opacity-0 scale-95 invisible"
               }`}
             >
-              <Link href="/program/madu" className="hover:text-green-700">
+              <Link href="/program/madu" className="">
                 Madu
               </Link>
             </div>
@@ -163,13 +166,13 @@ export default function Navigation() {
                   : "opacity-0 scale-95 invisible"
               }`}
             >
-              <Link href="/donasi/laporan" className="hover:text-green-700">
+              <Link href="/donasi/laporan" className="">
                 Laporan
               </Link>
-              <Link href="/donasi/gaji" className="hover:text-green-700">
+              <Link href="/donasi/gaji" className="">
                 Gaji Pengajar
               </Link>
-              <Link href="/donasi/waqaf" className="hover:text-green-700">
+              <Link href="/donasi/waqaf" className="">
                 Rencana Tanah Waqaf
               </Link>
             </div>

@@ -106,3 +106,8 @@ body {
 .fKufam{
   font-family: 'Kufam';
 }
+
+nav>a,nav>div{
+  @apply py-5 px-5 h-full border-r border-green-700/20 transition hover:text-green-700 hover:bg-green-700/20 text-[14px] font-light tracking-[1px] text-white/80;
+  /* background-color:aqua; */
+}
