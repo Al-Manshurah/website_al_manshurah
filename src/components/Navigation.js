@@ -5,6 +5,11 @@ import Image from "next/image";
 import { useState, useRef } from "react";
 import { gitRepoS, imgLogoS } from "../utils/utilStrings";
 
+import { usePathname } from "next/navigation";
+import { utilRoutes } from "../utils/utilRoutes";
+
+import { RiArrowDropDownLine, RiCustomerServiceLine } from "@remixicon/react";
+
 export default function Navigation() {
   const [openMenu, setOpenMenu] = useState("");
   const closeTimer = useRef(null);
@@ -25,13 +30,17 @@ export default function Navigation() {
     }, 500);
   };
 
-  const dropdownClass =
-    "absolute bg-white text-black rounded-xl shadow-xl mt-2 px-4 py-3 flex flex-col gap-2 min-w-[220px] transition-all duration-200 ease-out transform origin-top z-40";
-
   const parentBtnClass =
-    "cursor-pointer inline-flex items-center gap-1 hover:text-green-300 transition";
+    "cursor-pointer inline-flex items-center gap-1 transition";
 
   const arrow = <span className="text-xs">▼</span>;
+
+  const pathname = usePathname();
+  const isActive = (href) =>
+    pathname === href || pathname.startsWith(href + "/");
+
+  const menus = utilRoutes.filter((menu) => !menu.isButton);
+  const buttons = utilRoutes.filter((menu) => menu.isButton);
 
   return (
     <header className="bg-green-950 text-white shadow-md">
@@ -56,141 +65,82 @@ export default function Navigation() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Menu Navigation */}
-        <nav className="flex items-center relative z-50">
-          <Link href="/tentang" className="">
-            Beranda
-          </Link>
-          {/* Beranda */}
-          {/* <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter("beranda")}
-            onMouseLeave={handleMouseLeave}
-          > */}
-          {/* <button
-              onClick={() => toggleMenu("beranda")}
-              className={parentBtnClass}
-            >
-              Beranda {arrow}
-            </button> */}
-          {/* <div
-              className={`${dropdownClass} ${
-                openMenu === "beranda"
-                  ? "opacity-100 scale-100 visible"
-                  : "opacity-0 scale-95 invisible"
-              }`}
-            >
-              <Link href="/" className="">
-                Pendahuluan
-              </Link>
-              <Link href="/beranda/pengenalan" className="">
-                Pengenalan Al Manshurah
-              </Link>
-              <Link href="/beranda/pengasuh" className="">
-                Profil Pengasuh/Pengajar
-              </Link>
-            </div> */}
-          {/* </div> */}
+        <nav className="w-full max-w-7xl mx-auto flex justify-between items-center z-50">
+          {/* Menu Navigasi */}
+          <div className="flex items-center gap-0">
+            {menus.map((menu) => {
+              const activeClass = isActive(menu.href)
+                ? "text-green-500 font-semibold"
+                : "";
 
-          {/* KBM */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter("kbm")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button
-              onClick={() => toggleMenu("kbm")}
-              className={parentBtnClass}
-            >
-              Kegiatan Da’wah (KBM) {arrow}
-            </button>
-            <div
-              className={`${dropdownClass} ${
-                openMenu === "kbm"
-                  ? "opacity-100 scale-100 visible"
-                  : "opacity-0 scale-95 invisible"
-              }`}
-            >
-              <Link href="/kbm/ceramah">Ceramah</Link>
-              <Link href="/kbm/kajian">Kajian/Jadwal</Link>
-              <Link href="/kbm/kutub">Kutub</Link>
-              <Link href="/kbm/tahunan">Kegiatan Tahunan</Link>
-              <Link href="/kbm/qurban">Qurban</Link>
-              <Link href="/kbm/ramadhan">Ramadhan</Link>
-              <Link href="/kbm/fatwa">Fatwa/Tanya Jawab</Link>
-            </div>
+              if (menu.submenu) {
+                return (
+                  <div
+                    key={menu.name}
+                    className="relative"
+                    onMouseEnter={() => handleMouseEnter(menu.name)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    <button
+                      onClick={() => toggleMenu(menu.name)}
+                      className={`${parentBtnClass} ${activeClass}`}
+                    >
+                      {menu.name}
+                      <RiArrowDropDownLine />
+                    </button>
+                    <div
+                      className={`cDropdown ${
+                        openMenu === menu.name
+                          ? "opacity-100 scale-100 visible"
+                          : "opacity-0 scale-95 invisible"
+                      }`}
+                    >
+                      {menu.submenu.map((sub) => (
+                        <Link
+                          key={sub.label}
+                          href={sub.href}
+                          className={`cSubMenu ${
+                            isActive(sub.href)
+                              ? "text-green-500 font-semibold"
+                              : ""
+                          }`}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
+              return (
+                <Link
+                  key={menu.name}
+                  href={menu.href}
+                  className={`transition ${activeClass}`}
+                >
+                  {menu.name}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* Program */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter("program")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button
-              onClick={() => toggleMenu("program")}
-              className={parentBtnClass}
-            >
-              Program Ekonomi Mandiri {arrow}
-            </button>
-            <div
-              className={`${dropdownClass} ${
-                openMenu === "program"
-                  ? "opacity-100 scale-100 visible"
-                  : "opacity-0 scale-95 invisible"
-              }`}
-            >
-              <Link href="/program/madu" className="">
-                Madu
+          {/* Tombol Aksi */}
+          <div className="flex items-center gap-3">
+            {buttons.map((btn) => (
+              <Link
+                key={btn.name}
+                href={btn.href}
+                className="cButton bg-green-700 text-white! px-4 py-2 rounded-[16px] font-medium hover:bg-green-100 transition shadow flex items-center gap-2"
+              >
+                {btn.icon}
+                {btn.name}
               </Link>
-            </div>
+            ))}
           </div>
-
-          {/* Donasi */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter("donasi")}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button
-              onClick={() => toggleMenu("donasi")}
-              className={parentBtnClass}
-            >
-              Donasi & Laporan Keuangan {arrow}
-            </button>
-            <div
-              className={`${dropdownClass} ${
-                openMenu === "donasi"
-                  ? "opacity-100 scale-100 visible"
-                  : "opacity-0 scale-95 invisible"
-              }`}
-            >
-              <Link href="/donasi/laporan" className="">
-                Laporan
-              </Link>
-              <Link href="/donasi/gaji" className="">
-                Gaji Pengajar
-              </Link>
-              <Link href="/donasi/waqaf" className="">
-                Rencana Tanah Waqaf
-              </Link>
-            </div>
-          </div>
-
-          {/* Tentang */}
-          <Link href="/tentang" className="hover:text-green-300 transition">
-            Tentang
-          </Link>
         </nav>
-
-        {/* Hubungi Kami Button */}
-        <Link
-          href="/hubungi"
-          className="bg-white text-green-700 px-4 py-2 rounded-full font-medium hover:bg-green-100 transition shadow"
-        >
-          Hubungi Kami
-        </Link>
       </div>
     </header>
   );

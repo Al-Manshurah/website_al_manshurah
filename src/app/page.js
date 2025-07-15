@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Navigation from "@/components/Navigation";
 import Link from "next/link";
@@ -26,49 +26,44 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <main className="p-6 space-y-12 max-w-5xl mx-auto">
-        {/* Pendahuluan */}
-        <section>
-          <h1 className="text-3xl font-bold mb-2 text-green-800">
-            Pendahuluan
-          </h1>
-          <p className="text-gray-700 leading-relaxed">
-            Yayasan Pendidikan Islam Al Manshurah adalah lembaga non-profit yang
-            didirikan untuk mengembangkan pendidikan dan dakwah Islam
-            berdasarkan Al-Qur&apos;an dan Sunnah. Kami berkomitmen untuk mencetak
-            generasi yang berakhlak mulia, berilmu, dan bermanfaat bagi umat.
-          </p>
-        </section>
-
+      <main className="space-y-12 mx-auto">
         {/* Hero Pengenalan */}
-        <section className="relative bg-[url('/images/hero-bg.jpg')] bg-cover bg-center text-white py-20 px-6 text-center">
-          <div className="bg-black/50 absolute inset-0" />
-          <div className="relative z-10 max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Yayasan Pendidikan Islam Al Manshurah
-            </h1>
-            <p className="text-lg md:text-xl mb-6">
-              Membina umat dengan ilmu, amal, dan akhlak mulia
-            </p>
-            <a
-              href="#tentang"
-              className="inline-block bg-green-600 hover:bg-green-700 transition px-6 py-3 rounded-full font-semibold shadow-md"
-            >
-              Pelajari Lebih Lanjut
-            </a>
+        <section className="relative bg-[url('/images/hero-bg.jpg')] bg-cover bg-center text-white py-20">
+          {/* <div className="bg-black/50 absolute inset-0" /> */}
+          <div className="absolute inset-0 bg-gradient-to-br from-green-700 via-green-600 to-green-900 opacity-80 z-0"></div>
+          <div className="relative flex  z-10 mx-auto max-w-7xl">
+            <div className="w-full mx-auto">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                Yayasan Pendidikan Islam Al Manshurah
+              </h1>
+              <p className="text-lg md:text-xl mb-6">
+                Membina umat dengan ilmu, amal, dan akhlak mulia
+              </p>
+              <a
+                href="#tentang"
+                className="inline-block bg-green-600 hover:bg-green-700 transition px-6 py-3 rounded-full font-semibold shadow-md"
+              >
+                Pelajari Lebih Lanjut
+              </a>
+            </div>
+
+            <div className="w-full h-full"></div>
           </div>
         </section>
 
         {/* Tentang */}
-        <section className="py-16 px-6 bg-gray-50" id="tentang">
-          <div className="max-w-5xl mx-auto">
+        <section
+          className="mx-auto max-w-7xl py-16 px-6 bg-gray-50"
+          id="tentang"
+        >
+          <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-4">Pendahuluan</h2>
             <p className="text-gray-700 leading-relaxed text-justify">
               Yayasan Al Manshurah didirikan untuk memperkuat peran dakwah Islam
-              yang berlandaskan pemahaman Ahlus Sunnah wal Jama&apos;ah. Kegiatan
-              utamanya meliputi pendidikan, kajian keislaman, dan program
-              sosial. Dengan dukungan para pengasuh dan masyarakat, Al Manshurah
-              terus berupaya menebarkan manfaat secara konsisten dan
+              yang berlandaskan pemahaman Ahlus Sunnah wal Jama&apos;ah.
+              Kegiatan utamanya meliputi pendidikan, kajian keislaman, dan
+              program sosial. Dengan dukungan para pengasuh dan masyarakat, Al
+              Manshurah terus berupaya menebarkan manfaat secara konsisten dan
               terstruktur.
             </p>
           </div>
@@ -76,7 +71,7 @@ export default function Home() {
 
         {/* Pengenalan */}
         <section className="py-16 px-6">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <div className="mx-auto max-w-7xl grid md:grid-cols-2 gap-10 items-center">
             <Image
               src="/images/pondok.jpg"
               alt="Pondok Al Manshurah"
@@ -107,7 +102,7 @@ export default function Home() {
 
         {/* Profil Pengajar */}
         <section className="py-16 px-6 bg-gray-100">
-          <div className="max-w-6xl mx-auto">
+          <div className="mx-auto max-w-7xl">
             <h2 className="text-3xl font-bold text-center mb-8">
               Profil Pengasuh &amp; Pengajar
             </h2>
@@ -133,7 +128,7 @@ export default function Home() {
         </section>
 
         {/* CTA Donasi */}
-        <section className="py-16 px-6 text-center bg-green-700 text-white">
+        <section className="mx-auto max-w-7xl py-16 px-6 rounded-[20px] text-center bg-green-700 text-white">
           <h2 className="text-3xl font-bold mb-4">
             Mari Bersama Membangun Generasi Islami
           </h2>
