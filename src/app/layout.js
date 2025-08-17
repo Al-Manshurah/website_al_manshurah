@@ -1,5 +1,5 @@
 // ⛔️ JANGAN import komponen client di sini
-import "./globals.css";
+import "./styles/globals.css";
 
 export const metadata = {
   title: "Yayasan Al Manshurah",

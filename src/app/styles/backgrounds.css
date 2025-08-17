@@ -1,0 +1,15 @@
+.bg-primary   { background-color: var(--primary); }
+.bg-secondary { background-color: var(--secondary); }
+.bg-base      { background-color: var(--base); }
+
+.bg-gold1     { background-color: var(--gold1); }
+.bg-gold2     { background-color: var(--gold2); }
+.bg-gold3     { background-color: var(--gold3); }
+
+.bg-primary1  { background-color: var(--primary1); }
+.bg-primary2  { background-color: var(--primary2); }
+.bg-primary3  { background-color: var(--primary3); }
+
+.bg-accent1   { background-color: var(--accent1); }
+.bg-accent2   { background-color: var(--accent2); }
+.bg-accent3   { background-color: var(--accent3); }

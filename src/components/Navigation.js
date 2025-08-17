@@ -43,8 +43,8 @@ export default function Navigation() {
   const buttons = utilRoutes.filter((menu) => menu.isButton);
 
   return (
-    <header className="bg-green-950 text-white shadow-md">
-      <div className="flex items-center justify-between bg-white border-b-8 border-green-700">
+    <header className="bg-secondary text-white shadow-md">
+      <div className="flex items-center justify-between bg-white">
         <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-black">
           {/* Logo */}
           <div className="flex items-center gap-3">
@@ -65,21 +65,22 @@ export default function Navigation() {
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="w-full h-[3px] bg-gradient-primary"></div>
+      <div className="mx-auto flex items-center justify-between">
         {/* Menu Navigation */}
-        <nav className="w-full max-w-7xl mx-auto flex justify-between items-center z-50">
+        <nav className="px-[80px] w-full flex justify-between items-center z-50 shadow-nav">
           {/* Menu Navigasi */}
           <div className="flex items-center gap-0">
             {menus.map((menu) => {
               const activeClass = isActive(menu.href)
-                ? "text-green-500 font-semibold"
-                : "";
+                ? "text-accent2 font-semibold bg-primary !h-full relative menu-nav-active"
+                : " ";
 
               if (menu.submenu) {
                 return (
                   <div
                     key={menu.name}
-                    className="relative"
+                    className="relative !h-full"
                     onMouseEnter={() => handleMouseEnter(menu.name)}
                     onMouseLeave={handleMouseLeave}
                   >
@@ -91,9 +92,9 @@ export default function Navigation() {
                       <RiArrowDropDownLine />
                     </button>
                     <div
-                      className={`cDropdown ${
+                      className={`cDropdown  self-start w-full  ml-[-16px] ${
                         openMenu === menu.name
-                          ? "opacity-100 scale-100 visible"
+                          ? "opacity-100 scale-100 visible mt-[38px]"
                           : "opacity-0 scale-95 invisible"
                       }`}
                     >
@@ -119,7 +120,7 @@ export default function Navigation() {
                 <Link
                   key={menu.name}
                   href={menu.href}
-                  className={`transition ${activeClass}`}
+                  className={`transition ${activeClass} items-center px-5`}
                 >
                   {menu.name}
                 </Link>
