@@ -41,7 +41,7 @@ export default function Home() {
             <div className="z-[1] absolute mx-auto inset-0 bg-gradient-primary opacity-80"></div>
             <div className="w-2/3 mx-auto px-4 relative  z-[2] text-center">
               <div className="w-full mx-auto">
-                <h1 className="text-4xl md:text-5xl font-bold mb-3">
+                <h1 className="text-h3 mb-3">
                   Nyantri Sunnah di Kota Santri!
                 </h1>
                 <p className="text-subtitle-1 opacity-[0.64] mb-9">

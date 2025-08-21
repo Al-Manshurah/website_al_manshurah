@@ -7,6 +7,7 @@ import { gitRepoS, imgLogoS } from "../utils/utilStrings";
 
 import { usePathname } from "next/navigation";
 import { utilRoutes } from "../utils/utilRoutes";
+import BtnIconMedium from "@/components/BtnIconMedium";
 
 import { RiArrowDropDownLine, RiCustomerServiceLine } from "@remixicon/react";
 
@@ -60,7 +61,7 @@ export default function Navigation() {
             </div>
             <div className="flex flex-col gap-0 relative">
               <svg
-              className="absolute right-0 left-0 top-4"
+                className="absolute right-0 left-0 top-4"
                 width="250"
                 height="19"
                 viewBox="0 0 250 19"
@@ -118,18 +119,14 @@ export default function Navigation() {
                       className={`cDropdown  self-start w-full  ml-[-16px] ${
                         openMenu === menu.name
                           ? "opacity-100 scale-100 visible mt-[38px]"
-                          : "opacity-0 scale-95 invisible"
+                          : "opacity-0 scale-95 invisible mt-[72px]"
                       }`}
                     >
                       {menu.submenu.map((sub) => (
                         <Link
                           key={sub.label}
                           href={sub.href}
-                          className={`cSubMenu ${
-                            isActive(sub.href)
-                              ? ""
-                              : ""
-                          }`}
+                          className={`cSubMenu ${isActive(sub.href) ? "" : ""}`}
                         >
                           {sub.label}
                         </Link>
@@ -154,14 +151,12 @@ export default function Navigation() {
           {/* Tombol Aksi */}
           <div className="flex items-center gap-3">
             {buttons.map((btn) => (
-              <Link
+              <BtnIconMedium
                 key={btn.name}
                 href={btn.href}
-                className="cButton bg-base text-primary !min-h-fit !h-fit px-3 !py-2 rounded-[12px] text-text-menu transition shadow inline-flex items-center gap-2"
-              >
-                {btn.name}
-                {btn.icon}
-              </Link>
+                label={btn.name}
+                icon={btn.icon}
+              />
             ))}
           </div>
         </nav>
