@@ -7,6 +7,8 @@ import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import PosterSection from "./SectionPsoter";
+import { RiArrowRightLine } from "@remixicon/react";
+import BtnCTA1 from '@/components/BtnCTA1';
 
 export default function Home() {
   const ustadzList = [
@@ -32,26 +34,27 @@ export default function Home() {
       <Navigation />
       <main className="space-y-12 mx-auto">
         {/* Hero Pengenalan */}
-        <section className="relative bg-[url('/images/hero-bg.jpg')] bg-cover bg-center text-white py-20">
-          {/* <div className="bg-black/50 absolute inset-0" /> */}
-          <div className="absolute inset-0 bg-gradient-to-br from-green-700 via-green-600 to-green-900 opacity-80 z-0"></div>
-          <div className="relative flex  z-10 mx-auto max-w-7xl">
-            <div className="w-full mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Yayasan Pendidikan Islam Al Manshurah
-              </h1>
-              <p className="text-lg md:text-xl mb-6">
-                Membina umat dengan ilmu, amal, dan akhlak mulia
-              </p>
-              <a
-                href="#tentang"
-                className="inline-block bg-green-600 hover:bg-green-700 transition px-6 py-3 rounded-full font-semibold shadow-md"
-              >
-                Pelajari Lebih Lanjut
-              </a>
-            </div>
 
-            <div className="w-full h-full"></div>
+        <section className="bg-gradient-primary">
+          <div className="relative bg-[url('/images/hero-bg.jpg')] bg-cover bg-center text-white">
+            {/* <div className="bg-black/50 absolute inset-0" /> */}
+            <div className="z-[1] absolute mx-auto inset-0 bg-gradient-primary opacity-80"></div>
+            <div className="w-2/3 mx-auto px-4 relative  z-[2] text-center">
+              <div className="w-full mx-auto">
+                <h1 className="text-4xl md:text-5xl font-bold mb-3">
+                  Nyantri Sunnah di Kota Santri!
+                </h1>
+                <p className="text-subtitle-1 opacity-[0.64] mb-9">
+                  Siapa saja bisa belajar Agama Islam dari dasar sesuai tuntunan
+                  Al Qur’an dan Sunnah berdasarkan pemahaman Salafush Shaleh
+                  secara runtut dan sistematis walaupun angin kesibukan kuliah
+                  dan bekerja telah menerpa.
+                </p>
+               <BtnCTA1 href="#tentang" label="Lihat Jadwal Kajian" />
+              </div>
+
+              <div className="w-full h-full"></div>
+            </div>
           </div>
         </section>
 
@@ -119,38 +122,48 @@ export default function Home() {
         </section>
 
         {/* Kajian Kitab Rutin */}
-<section className="py-16 px-6 bg-white">
-  <div className="mx-auto max-w-7xl text-center">
-    <h2 className="text-3xl font-bold mb-4">
-      Kajian Kitab Rutin Terbuka untuk Umum
-    </h2>
-    <p className="text-gray-700 mb-10 text-lg">
-      Dibuka untuk semua kalangan: pelajar, mahasiswa, pekerja, dan ibu rumah tangga.
-      Dilaksanakan empat kali dalam sepekan dengan materi terstruktur dan berkesinambungan.
-    </p>
-    <div className="grid md:grid-cols-3 gap-8 text-left">
-      <div className="bg-gray-50 p-6 rounded-xl shadow-md">
-        <h3 className="font-semibold text-lg mb-2">📚 Bertahap dan Terarah</h3>
-        <p className="text-gray-600 text-sm">
-          Materi kajian disusun secara urut dan sistematis agar mudah dipahami dan relevan untuk berbagai jenjang pemahaman.
-        </p>
-      </div>
-      <div className="bg-gray-50 p-6 rounded-xl shadow-md">
-        <h3 className="font-semibold text-lg mb-2">🧠 Fondasi Ilmu yang Kuat</h3>
-        <p className="text-gray-600 text-sm">
-          Fokus utama adalah memperkuat dasar-dasar ilmu agama, termasuk akidah, fikih, dan adab berdasarkan kitab-kitab rujukan.
-        </p>
-      </div>
-      <div className="bg-gray-50 p-6 rounded-xl shadow-md">
-        <h3 className="font-semibold text-lg mb-2">🤝 Bekal Samudra Kehidupan</h3>
-        <p className="text-gray-600 text-sm">
-          Kajian ini ditujukan sebagai bekal ilmu dan pemahaman dalam menjalankan peran di masyarakat secara bermanfaat dan bertanggung jawab.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
+        <section className="py-16 px-6 bg-white">
+          <div className="mx-auto max-w-7xl text-center">
+            <h2 className="text-3xl font-bold mb-4">
+              Kajian Kitab Rutin Terbuka untuk Umum
+            </h2>
+            <p className="text-gray-700 mb-10 text-lg">
+              Dibuka untuk semua kalangan: pelajar, mahasiswa, pekerja, dan ibu
+              rumah tangga. Dilaksanakan empat kali dalam sepekan dengan materi
+              terstruktur dan berkesinambungan.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 text-left">
+              <div className="bg-gray-50 p-6 rounded-xl shadow-md">
+                <h3 className="font-semibold text-lg mb-2">
+                  📚 Bertahap dan Terarah
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Materi kajian disusun secara urut dan sistematis agar mudah
+                  dipahami dan relevan untuk berbagai jenjang pemahaman.
+                </p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-xl shadow-md">
+                <h3 className="font-semibold text-lg mb-2">
+                  🧠 Fondasi Ilmu yang Kuat
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Fokus utama adalah memperkuat dasar-dasar ilmu agama, termasuk
+                  akidah, fikih, dan adab berdasarkan kitab-kitab rujukan.
+                </p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-xl shadow-md">
+                <h3 className="font-semibold text-lg mb-2">
+                  🤝 Bekal Samudra Kehidupan
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Kajian ini ditujukan sebagai bekal ilmu dan pemahaman dalam
+                  menjalankan peran di masyarakat secara bermanfaat dan
+                  bertanggung jawab.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Program Unggulan */}
         <section className="py-16 px-6 bg-gray-50">
@@ -250,40 +263,48 @@ export default function Home() {
           </div>
         </section>
 
-       {/* Profil Pengasuh */}
-<section className="py-16 px-6 bg-gray-100">
-  <div className="mx-auto max-w-7xl">
-    <h2 className="text-3xl font-bold text-center mb-8">Profil Pengasuh</h2>
-    <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 bg-white shadow-lg rounded-xl p-6 max-w-4xl mx-auto">
-      {/* Teks di kiri */}
-      <div className="text-center md:text-left md:w-2/3">
-        <h3 className="font-semibold text-xl mb-2">Ustadz Ahmad Zain</h3>
-        <p className="text-green-700 text-sm mb-4">Pengasuh Yayasan</p>
-        <p className="text-gray-700 text-sm leading-relaxed">
-          Beliau merupakan lulusan Pondok Pesantren Darul Hadits, Yaman, dan saat ini mengemban amanah sebagai pengasuh utama Yayasan Al Manshurah. Dengan landasan keilmuan yang kokoh serta pendekatan dakwah yang bijaksana dan berbasis nilai, beliau membimbing kegiatan yayasan secara konsisten demi kemaslahatan umat.
-        </p>
-      </div>
+        {/* Profil Pengasuh */}
+        <section className="py-16 px-6 bg-gray-100">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="text-3xl font-bold text-center mb-8">
+              Profil Pengasuh
+            </h2>
+            <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-8 bg-white shadow-lg rounded-xl p-6 max-w-4xl mx-auto">
+              {/* Teks di kiri */}
+              <div className="text-center md:text-left md:w-2/3">
+                <h3 className="font-semibold text-xl mb-2">
+                  Ustadz Ahmad Zain
+                </h3>
+                <p className="text-green-700 text-sm mb-4">Pengasuh Yayasan</p>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Beliau merupakan lulusan Pondok Pesantren Darul Hadits, Yaman,
+                  dan saat ini mengemban amanah sebagai pengasuh utama Yayasan
+                  Al Manshurah. Dengan landasan keilmuan yang kokoh serta
+                  pendekatan dakwah yang bijaksana dan berbasis nilai, beliau
+                  membimbing kegiatan yayasan secara konsisten demi kemaslahatan
+                  umat.
+                </p>
+              </div>
 
-      {/* Ikon di kanan */}
-      <div className="bg-green-100 rounded-full p-4">
-        <svg
-          className="w-14 h-14 text-green-700"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5.121 17.804A11.938 11.938 0 0012 20c2.485 0 4.79-.758 6.879-2.05a2 2 0 10-2.757-2.817A8.003 8.003 0 0112 18a8.003 8.003 0 01-4.122-1.15 2 2 0 10-2.757 2.954zM12 12a4 4 0 100-8 4 4 0 000 8z"
-          />
-        </svg>
-      </div>
-    </div>
-  </div>
-</section>
-
+              {/* Ikon di kanan */}
+              <div className="bg-green-100 rounded-full p-4">
+                <svg
+                  className="w-14 h-14 text-green-700"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5.121 17.804A11.938 11.938 0 0012 20c2.485 0 4.79-.758 6.879-2.05a2 2 0 10-2.757-2.817A8.003 8.003 0 0112 18a8.003 8.003 0 01-4.122-1.15 2 2 0 10-2.757 2.954zM12 12a4 4 0 100-8 4 4 0 000 8z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Poster Nashihat */}
         <PosterSection />
