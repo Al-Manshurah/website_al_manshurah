@@ -4,16 +4,28 @@
 import Link from "next/link";
 import { RiArrowRightLine } from "@remixicon/react";
 
-export default function BtnCTA1({ href, label, className = "", ...props }) {
+export default function BtnCTA1({
+  href,
+  label,
+  className = "",
+  icon,
+  isOutlined,
+  ...props
+}) {
   return (
     <Link
       href={href}
-      className={`flex justify-center items-center gap-2 mx-auto w-fit bg-base text-primary text-text-menu transition px-5 py-3 rounded-[12px] hover:bg-primary hover:text-white ${className}`}
+      className={`flex justify-center items-center gap-2 mx-auto w-fit 
+        ${
+          isOutlined
+            ? " bg-base/0 text-base border border-base "
+            : " bg-base text-primary "
+        } text-text-menu transition px-5 py-3 rounded-[12px] hover:bg-primary hover:text-white ${className}`}
       {...props}
     >
       {label}
       <div className="bg-primary/20 rounded-[10px] p-1">
-        <RiArrowRightLine size={16} />
+        {icon ? icon : <RiArrowRightLine size={16} />}
       </div>
     </Link>
   );

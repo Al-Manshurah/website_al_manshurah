@@ -105,5 +105,26 @@ nav .cDropdown > a {
 }
 
 section {
-  @apply py-[72px];
+  @apply py-[72px] px-20;
+}
+
+.custom_illustration_item_small{
+  @apply bg-primary/10 mb-2 h-[148px] w-[148px] max-h-[148px] max-w-[148px] rounded-full;
+}
+
+.wrap_illustration_item{
+  @apply flex flex-col justify-center items-center;
+}
+
+.wrap_illustration_item .text-label-item{
+  @apply opacity-[0.64];
+}
+
+.wrap_illustration_item.custom_vertical{
+  @apply !flex-row gap-5;
+}
+
+
+.wrap_illustration_item.custom_vertical>.custom_illustration_item_small{
+  @apply bg-white/80 !max-w-[120px] !max-h-[120px] !min-w-[120px] !min-h-[120px];
 }
