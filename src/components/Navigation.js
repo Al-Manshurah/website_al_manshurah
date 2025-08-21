@@ -127,7 +127,7 @@ export default function Navigation() {
                           href={sub.href}
                           className={`cSubMenu ${
                             isActive(sub.href)
-                              ? "text-green-500 font-semibold"
+                              ? ""
                               : ""
                           }`}
                         >
