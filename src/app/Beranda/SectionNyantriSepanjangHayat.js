@@ -27,7 +27,7 @@ export default function SectionNyantriSepanjangHayat({
         <div className="mb-3 text-primary text-subtitle-2 opacity-[0.72]">
           Menimba Ilmu Sepanjang Hayat
         </div>
-        <div className="flex">
+        <div className="flex flex-col lg:flex-row gap-5 items-center lg:items-start">
           <h3 className="text-h1 mb-2 italic">
             Santri Sejati
             <span className="text-secondary">
@@ -35,7 +35,7 @@ export default function SectionNyantriSepanjangHayat({
               Belajar Hingga Ajal Mendapati
             </span>
           </h3>
-          <div className="bg-primary/10 !h-[320px] !w-[320px] min-h-[320px] min-w-[320px] rounded-full"></div>
+          <div className="bg-primary/10 lg:!h-[320px] lg:!w-[320px] md:!h-[220px] md:!w-[220px] !h-[220px] !w-[220px] min-h-[220px] min-w-[220px] lg:min-h-[320px] lg:min-w-[320px] rounded-full"></div>
         </div>
       </div>
     </section>

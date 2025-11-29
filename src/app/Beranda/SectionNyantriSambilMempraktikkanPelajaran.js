@@ -3,7 +3,7 @@
 
 import Link from "next/link";
 import { RiArrowRightLine } from "@remixicon/react";
-import ItemIllustration1 from "@/components/ItemIllustration1";
+import ItemIllustration2 from "@/components/ItemIllustration2";
 
 export default function SectionNyantriSambilMempraktikkanPelajaran({
   label,
@@ -18,8 +18,8 @@ export default function SectionNyantriSambilMempraktikkanPelajaran({
 
   return (
     <section className="bg-base">
-      <div className="flex gap-5">
-        <div className="w-1/2">
+      <div className="flex flex-col lg:flex-row gap-5">
+        <div className="w-full lg:w-1/2">
           <div className="mb-0.5 text-subtitle-1 txet-primary opacity-[0.64]">
             Kapan lagi bisa
           </div>
@@ -51,9 +51,9 @@ export default function SectionNyantriSambilMempraktikkanPelajaran({
           </div> */}
         </div>
         {/* <div className="flex gap-5 justify-center mt-16"> */}
-        <div className="w-1/2 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-y-14 gap-x-5 text-center">
+        <div className="w-full lg:w-1/2 mx-auto grid grid-cols-2 md:grid-cols-1 gap-y-14 gap-x-5 text-center">
           {items.map((item, index) => (
-            <ItemIllustration1 key={index} label={item.label} />
+            <ItemIllustration2 key={index} label={item.label} />
           ))}
         </div>
       </div>

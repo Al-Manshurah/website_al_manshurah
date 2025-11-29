@@ -45,15 +45,15 @@ body {
 }
 
 /* @layer components { */
-nav > div > a,
-nav > div > div {
+nav>div>a,
+nav>div>div {
   @apply py-3.5 pr-3 pl-5 h-full border-r transition text-[12px] font-semibold tracking-[1px] hover:text-white min-h-[52px] flex items-end;
   border-color: color-mix(in srgb, var(--primary) 32%, transparent);
   color: color-mix(in srgb, var(--base) 72%, transparent);
 }
 
-nav > div > a:hover,
-nav > div > div:hover {
+nav>div>a:hover,
+nav>div>div:hover {
   background-color: color-mix(in srgb, var(--primary) 64%, transparent);
 }
 
@@ -67,17 +67,17 @@ nav > div > div:hover {
     background: bg-primary;
   } */
 
-nav > div > a:first-child,
-nav > div > div:first-child {
+nav>div>a:first-child,
+nav>div>div:first-child {
   @apply border-l border-green-700/20;
   /* background-color:aqua; */
 }
 
-nav > div > .cButton {
+nav>div>.cButton {
   /* @apply ; */
 }
 
-nav > div > .cButton > svg {
+nav>div>.cButton>svg {
   width: 20px;
   height: 20px;
 }
@@ -87,7 +87,7 @@ nav .cSubMenu:last-child {
 }
 
 nav .cSubMenu {
-  @apply hover:text-white text-white/80  py-4 border-b border-green-700/20;
+  @apply hover:text-white text-white/80 py-4 border-b border-green-700/20;
 }
 
 nav .cSubMenu:hover {
@@ -99,8 +99,8 @@ nav .cDropdown {
   background: var(--primary);
 }
 
-nav .cDropdown > div,
-nav .cDropdown > a {
+nav .cDropdown>div,
+nav .cDropdown>a {
   @apply px-3;
 }
 
@@ -108,23 +108,69 @@ section {
   @apply py-[72px] px-20;
 }
 
-.custom_illustration_item_small{
+.custom_illustration_item_small {
   @apply bg-primary/10 mb-2 h-[148px] w-[148px] max-h-[148px] max-w-[148px] rounded-full;
 }
 
-.wrap_illustration_item{
-  @apply flex flex-col justify-center items-center;
+.wrap_illustration_item {
+  @apply flex flex-col justify-start items-center;
 }
 
-.wrap_illustration_item .text-label-item{
+.wrap_illustration_item_2 {
+  @apply flex md:flex-row flex-col md:justify-center justify-start md:items-center items-start md:gap-3;
+}
+
+.wrap_illustration_item .text-label-item {
   @apply opacity-[0.64];
 }
 
-.wrap_illustration_item.custom_vertical{
+.wrap_illustration_item_2 .text-label-item {
+  @apply opacity-[0.64] md:text-start text-center justify-start md:justify-center;
+}
+
+.wrap_illustration_item.custom_vertical {
   @apply !flex-row gap-5;
 }
 
 
-.wrap_illustration_item.custom_vertical>.custom_illustration_item_small{
+.wrap_illustration_item.custom_vertical>.custom_illustration_item_small {
   @apply bg-white/80 !max-w-[120px] !max-h-[120px] !min-w-[120px] !min-h-[120px];
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* Navigation adjustments */
+  nav {
+    @apply px-8;
+  }
+
+  nav>div>a,
+  nav>div>div {
+    @apply text-[11px] px-3 pr-2 pl-3;
+  }
+
+  /* Section padding */
+  section {
+    @apply py-12 px-8;
+  }
+}
+
+/* Mobile Responsive Styles (same as tablet) */
+@media (max-width: 767px) {
+
+  /* Navigation adjustments */
+  nav {
+    @apply px-4;
+  }
+
+  nav>div>a,
+  nav>div>div {
+    @apply text-[10px] px-2 pr-2 pl-2;
+  }
+
+  /* Section padding */
+  section {
+    @apply py-8 px-4;
+  }
 }

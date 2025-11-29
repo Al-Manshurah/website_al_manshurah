@@ -9,15 +9,21 @@ import { usePathname } from "next/navigation";
 import { utilRoutes } from "../utils/utilRoutes";
 import BtnIconMedium from "@/components/BtnIconMedium";
 
-import { RiArrowDropDownLine, RiCustomerServiceLine } from "@remixicon/react";
+import { RiArrowDropDownLine, RiCustomerServiceLine, RiMenuLine, RiCloseLine } from "@remixicon/react";
 
 export default function Navigation() {
   const [openMenu, setOpenMenu] = useState("");
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState("");
   const closeTimer = useRef(null);
 
   const toggleMenu = (menu) => {
     clearTimeout(closeTimer.current);
     setOpenMenu(openMenu === menu ? "" : menu);
+  };
+
+  const toggleMobileSubmenu = (menu) => {
+    setMobileSubmenuOpen(mobileSubmenuOpen === menu ? "" : menu);
   };
 
   const handleMouseEnter = (menu) => {
@@ -31,10 +37,20 @@ export default function Navigation() {
     }, 500);
   };
 
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
+    if (drawerOpen) {
+      setMobileSubmenuOpen(""); // Close submenu when closing drawer
+    }
+  };
+
+  const closeDrawer = () => {
+    setDrawerOpen(false);
+    setMobileSubmenuOpen("");
+  };
+
   const parentBtnClass =
     "cursor-pointer inline-flex items-center gap-1 transition";
-
-  const arrow = <span className="text-xs">▼</span>;
 
   const pathname = usePathname();
   const isActive = (href) =>
@@ -46,10 +62,10 @@ export default function Navigation() {
   return (
     <header className="bg-secondary text-white shadow-md">
       <div className="py-7 flex items-center justify-between bg-white">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-black">
+        <div className="w-full mx-auto px-4 py-3 flex items-center justify-between text-black">
           {/* Logo */}
           <div className="flex items-center justify-center gap-3">
-            <div className="p-2 bg-gradient-primary rounded-[100%]">
+            <div className="p-2 bg-gradient-primary rounded-[100%] scale-[0.8] md:scale[1]">
               <div className="p-1 bg-base rounded-[100%] overflow-hidden">
                 <Image
                   src={`${gitRepoS}${imgLogoS}`}
@@ -79,19 +95,29 @@ export default function Navigation() {
                   fill="#01002B"
                 />
               </svg>
-              <div className="fKufam font-bold h-fit max-h-fit text-primary text-center tracking-[0.24em] text-[20px]">
+              <div className="fKufam font-bold h-fit max-h-fit text-primary text-center tracking-[0.24em] text-[16px] md:text-[20px]">
                 Halaqah Ilmu
               </div>
-              <div className="fKufam font-extrabold text-[36px] h-fit max-h-[42px] text-secondary text-center">
+              <div className="fKufam font-extrabold text-[32px] md:text-[36px] h-fit max-h-[42px] text-secondary text-center">
                 Al Manshurah
               </div>
             </div>
           </div>
+
+          {/* Hamburger Button (Tablet & Mobile only) */}
+          <button
+            onClick={toggleDrawer}
+            className="lg:hidden p-2 text-primary hover:text-secondary transition"
+            aria-label="Toggle menu"
+          >
+            <RiMenuLine size={32} />
+          </button>
         </div>
       </div>
       <div className="w-full h-[3px] bg-gradient-primary"></div>
-      <div className="mx-auto flex items-center justify-between">
-        {/* Menu Navigation */}
+
+      {/* Desktop Navigation (hidden on tablet/mobile) */}
+      <div className="mx-auto hidden lg:flex items-center justify-between">
         <nav className="px-[80px] w-full flex justify-between items-center z-50 shadow-nav">
           {/* Menu Navigasi */}
           <div className="flex items-center gap-0">
@@ -116,11 +142,10 @@ export default function Navigation() {
                       <RiArrowDropDownLine />
                     </button>
                     <div
-                      className={`cDropdown  self-start w-full  ml-[-16px] ${
-                        openMenu === menu.name
-                          ? "opacity-100 scale-100 visible mt-[38px]"
-                          : "opacity-0 scale-95 invisible mt-[72px]"
-                      }`}
+                      className={`cDropdown  self-start w-full  ml-[-16px] ${openMenu === menu.name
+                        ? "opacity-100 scale-100 visible mt-[38px]"
+                        : "opacity-0 scale-95 invisible mt-[72px]"
+                        }`}
                     >
                       {menu.submenu.map((sub) => (
                         <Link
@@ -161,6 +186,111 @@ export default function Navigation() {
           </div>
         </nav>
       </div>
+
+      {/* Mobile/Tablet Drawer */}
+      <>
+        {/* Backdrop */}
+        <div
+          className={`fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-300 ${drawerOpen ? "opacity-100 visible" : "opacity-0 invisible"
+            }`}
+          onClick={closeDrawer}
+        />
+
+        {/* Drawer Panel */}
+        <div
+          className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-gradient-primary text-white z-50 lg:hidden transform transition-transform duration-300 ease-in-out overflow-y-auto ${drawerOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+        >
+          {/* Drawer Header */}
+          <div className="flex items-center justify-between p-4 border-b border-white/20">
+            <h2 className="text-xl font-bold">Menu</h2>
+            <button
+              onClick={closeDrawer}
+              className="p-2 hover:bg-white/10 rounded-lg transition"
+              aria-label="Close menu"
+            >
+              <RiCloseLine size={24} />
+            </button>
+          </div>
+
+          {/* Drawer Menu Items */}
+          <nav className="p-4">
+            <ul className="space-y-2">
+              {menus.map((menu) => {
+                const activeClass = isActive(menu.href)
+                  ? "bg-secondary text-accent2"
+                  : "hover:bg-white/10";
+
+                if (menu.submenu) {
+                  return (
+                    <li key={menu.name}>
+                      <button
+                        onClick={() => toggleMobileSubmenu(menu.name)}
+                        className={`w-full flex items-center justify-between px-4 py-3 rounded-lg transition ${activeClass}`}
+                      >
+                        <span className="font-semibold">{menu.name}</span>
+                        <RiArrowDropDownLine
+                          className={`transition-transform duration-200 ${mobileSubmenuOpen === menu.name ? "rotate-180" : ""
+                            }`}
+                        />
+                      </button>
+                      {/* Submenu */}
+                      <ul
+                        className={`ml-4 mt-2 space-y-1 overflow-hidden transition-all duration-300 ${mobileSubmenuOpen === menu.name
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
+                          }`}
+                      >
+                        {menu.submenu.map((sub) => (
+                          <li key={sub.label}>
+                            <Link
+                              href={sub.href}
+                              onClick={closeDrawer}
+                              className={`block px-4 py-2 rounded-lg transition ${isActive(sub.href)
+                                ? "bg-secondary text-accent2"
+                                : "hover:bg-white/10"
+                                }`}
+                            >
+                              {sub.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  );
+                }
+
+                return (
+                  <li key={menu.name}>
+                    <Link
+                      href={menu.href}
+                      onClick={closeDrawer}
+                      className={`block px-4 py-3 rounded-lg font-semibold transition ${activeClass}`}
+                    >
+                      {menu.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* Action Buttons in Drawer */}
+            <div className="mt-6 pt-6 border-t border-white/20 space-y-3">
+              {buttons.map((btn) => (
+                <Link
+                  key={btn.name}
+                  href={btn.href}
+                  onClick={closeDrawer}
+                  className="flex items-center gap-3 px-4 py-3 bg-accent2 hover:bg-accent2/80 rounded-lg transition font-semibold"
+                >
+                  {btn.icon}
+                  <span>{btn.name}</span>
+                </Link>
+              ))}
+            </div>
+          </nav>
+        </div>
+      </>
     </header>
   );
 }

@@ -34,7 +34,7 @@ export default function SectionPaketKomplitBelajarAgamaIslam({
           Bekal Menunaikan Seluruh Kewajiban Seorang Hamba dalam Kehidupan
         </div>
         {/* <div className="flex gap-5 justify-center mt-16"> */}
-        <div className="max-w-[888px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-14 gap-x-5 mt-16">
+        <div className="max-w-[888px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-y-14 gap-x-5 mt-16">
           {items.map((item, index) => (
             <ItemIllustration1 key={index} label={item.label} />
           ))}

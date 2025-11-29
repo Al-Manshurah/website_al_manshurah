@@ -6,7 +6,7 @@ import { RiArrowRightLine } from "@remixicon/react";
 import ItemIllustration1 from "@/components/ItemIllustration1";
 
 export default function SectionNyantriNonAsrama({
-  
+
   label,
   className = ""
 }) {
@@ -34,7 +34,7 @@ export default function SectionNyantriNonAsrama({
           Terbuka Untuk Mahasiswa, Pekerja, & Semua Kalangan
         </div>
         {/* <div className="flex gap-5 justify-center mt-16"> */}
-        <div className="max-w-[888px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-14 gap-x-5 mt-16">
+        <div className="max-w-[888px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-y-14 gap-x-5 mt-16">
           {items.map((item, index) => (
             <ItemIllustration1 key={index} label={item.label} />
           ))}

@@ -24,8 +24,8 @@ export default function SectionNggaAdaAlasanNggaNyantri({
 
   return (
     <section className="bg-base">
-      <div className="flex gap-5">
-        <div className="w-1/2">
+      <div className="flex flex-col lg:flex-row gap-5">
+        <div className="w-full lg:w-1/2">
           {/* <div className="mb-0.5 text-subtitle-1 txet-primary opacity-[0.64]">
             teks 
           </div> */}
@@ -66,7 +66,7 @@ export default function SectionNggaAdaAlasanNggaNyantri({
           </div> */}
         </div>
         {/* <div className="flex gap-5 justify-center mt-16"> */}
-        <div className="w-1/2 mx-auto flex flex-col items-start gap-y-5 p-10 rounded-[40px] bg-secondary text-white">
+        <div className="w-full lg:w-1/2 mx-auto flex flex-col items-start gap-y-5 p-6 lg:p-10 rounded-[40px] bg-secondary text-white">
           <h3 className="text-h3">Sebab:</h3>
           {items.map((item, index) => (
             <ItemIllustrationHorizontal1 key={index} label={item.label} />
