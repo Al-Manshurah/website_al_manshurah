@@ -1,5 +1,5 @@
 .text-h1 {
-  font-family: "Kufam", sans-serif;
+  font-family: var(--font-kufam), sans-serif;
   font-weight: 700;
   /* Bold */
   font-style: normal;
@@ -13,9 +13,11 @@
 }
 
 .text-h3 {
-  font-family: "Kufam", sans-serif;
+  font-family: var(--font-kufam), sans-serif;
   font-weight: 700;
   /* Bold */
+  font-style: normal;
+  /* Italic */
   font-size: 48px;
   line-height: normal;
   /* atau 1.2 kalau mau konsisten */
@@ -24,7 +26,7 @@
 }
 
 .text-subtitle-1 {
-  font-family: "Lora", serif;
+  font-family: var(--font-lora), serif;
   font-weight: 500;
   font-size: 20px;
   line-height: normal;
@@ -33,7 +35,7 @@
 }
 
 .text-subtitle-2 {
-  font-family: "Lora", serif;
+  font-family: var(--font-lora), serif;
   font-weight: 700;
   /* Bold */
   font-size: 30px;
@@ -43,7 +45,7 @@
 }
 
 .text-label-item {
-  font-family: "Lora", serif;
+  font-family: var(--font-lora), serif;
   font-weight: 500;
   /* Medium */
   font-size: 24px;
@@ -54,7 +56,7 @@
 
 
 .text-text-menu {
-  font-family: "Lora", serif;
+  font-family: var(--font-lora), serif;
   font-weight: 600;
   /* SemiBold */
   font-size: 14px;
