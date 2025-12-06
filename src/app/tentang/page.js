@@ -31,7 +31,7 @@ export default function TentangPage() {
           <div className="bg-white py-16 px-6 text-gray-800 flex gap-2 items-center justify-center">
             <div className="bg-primary aspect-[8/8] w-1/2 rounded-[16px]"></div>
             <p className="text-subtitle-1 mb-6 text-center w-1/2 items-center justify-center h-full">
-              Kami mengupayakan berbagai kegiatan seperti kajian
+              Insyaa Allah lami senantiasa mengupayakan berbagai kegiatan seperti kajian
               rutin, pengajian tahunan, distribusi fatwa dan penyuluhan, serta
               program-program ekonomi syariah seperti penjualan madu untuk pengembangan dakwah.
             </p>
