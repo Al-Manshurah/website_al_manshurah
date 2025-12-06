@@ -9,9 +9,9 @@ import BtnCTA1 from "@/components/BtnCTA1";
 export default function SectionHubungiKami({ label, className = "" }) {
   return (
     // <section className="bg-base">
-    <section className="bg-base text-base">
+    <section className="bg-base text-base c_sm_p_t_0">
       <div className="max-w-7xl mx-auto ">
-        <div className="flex flex-col md:flex-row justify-between gap-0 bg-gradient-primary px-4 md:px-20 py-20 rounded-[40px]">
+        <div className="flex flex-col md:flex-row justify-between gap-0 bg-gradient-primary px-4 md:px-20 py-20 rounded-[16px] md:rounded-[40px]">
           <div className="flex flex-col">
             <h3 className="text-h1 mb-2 italic">
               Jangan Sia-Siakan Sisa Umur Ini Lagi

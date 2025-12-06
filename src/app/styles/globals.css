@@ -105,7 +105,7 @@ nav .cDropdown>a {
 }
 
 section {
-  @apply py-[72px] px-20;
+  @apply py-[72px] px-20 overflow-hidden;
 }
 
 .custom_illustration_item_small {
@@ -135,6 +135,14 @@ section {
 
 .wrap_illustration_item.custom_vertical>.custom_illustration_item_small {
   @apply bg-white/80 !max-w-[120px] !max-h-[120px] !min-w-[120px] !min-h-[120px];
+}
+
+section.c-hero {
+  @apply !p-0;
+}
+
+section.c-hero>div>div>div:first-child {
+  @apply py-16 px-3;
 }
 
 /* Tablet Responsive Styles */
@@ -171,6 +179,19 @@ section {
 
   /* Section padding */
   section {
-    @apply py-8 px-4;
+    @apply py-36 px-4;
+  }
+
+  section.c-hero>div>div>div:first-child {
+    @apply py-16 px-3;
+  }
+
+  section.c-hero .text-h3 {
+    font-size: 40px !important;
+    font-style: italic;
+  }
+
+  .c_sm_p_t_0 {
+    padding-top: 0px !important;
   }
 }

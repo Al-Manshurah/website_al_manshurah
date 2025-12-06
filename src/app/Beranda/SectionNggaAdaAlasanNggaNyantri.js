@@ -66,7 +66,7 @@ export default function SectionNggaAdaAlasanNggaNyantri({
           </div> */}
         </div>
         {/* <div className="flex gap-5 justify-center mt-16"> */}
-        <div className="w-full lg:w-1/2 mx-auto flex flex-col items-start gap-y-5 p-6 lg:p-10 rounded-[40px] bg-secondary text-white">
+        <div className="w-full lg:w-1/2 mx-auto flex flex-col items-start gap-y-5 p-6 lg:p-10 rounded-[16px] md:rounded-[40px] bg-secondary text-white">
           <h3 className="text-h3">Sebab:</h3>
           {items.map((item, index) => (
             <ItemIllustrationHorizontal1 key={index} label={item.label} />

@@ -28,7 +28,7 @@ export default function SectionPaketKomplitBelajarAgamaIslam({
         </div>
         <h3 className="text-h3 mb-2">
           Paket Komplit
-          <span className="text-secondary">Belajar Agama Islam</span>
+          <span className="text-secondary block"> Belajar Agama Islam</span>
         </h3>
         <div className="mb-0.5 text-secondary text-subtitle-2 opacity-[0.72]">
           Bekal Menunaikan Seluruh Kewajiban Seorang Hamba dalam Kehidupan

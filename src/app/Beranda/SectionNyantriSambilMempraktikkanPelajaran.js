@@ -17,7 +17,7 @@ export default function SectionNyantriSambilMempraktikkanPelajaran({
   ];
 
   return (
-    <section className="bg-base">
+    <section className="bg-base overflow-y-visible c_sm_p_t_0">
       <div className="flex flex-col lg:flex-row gap-5">
         <div className="w-full lg:w-1/2">
           <div className="mb-0.5 text-subtitle-1 txet-primary opacity-[0.64]">
@@ -29,7 +29,7 @@ export default function SectionNyantriSambilMempraktikkanPelajaran({
               <span className="text-secondary"> Mempraktikkan Pelajaran</span>
             </h3>
             <svg
-              className="absolute left-0 top-[88px]"
+              className="absolute left-0 md:top-[88px] top-[440px]"
               width="511"
               height="475"
               viewBox="0 0 511 475"

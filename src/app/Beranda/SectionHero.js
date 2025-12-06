@@ -18,7 +18,8 @@ export default function SectionHero({ href, label, className = "" }) {
   ];
 
   return (
-    <section className="bg-gradient-primary">
+    <section className="bg-gradient-primary  aspect-[5/8]  md:aspect-[8/3] c-hero">
+      {/* <section className="bg-gradient-primary  aspect-[5/8]  md:aspect-[8/5] c-hero"> */}
       <div className="relative bg-[url('/images/hero-bg.jpg')] bg-cover bg-center text-white">
         {/* <div className="bg-black/50 absolute inset-0" /> */}
         <div className="z-[1] absolute mx-auto inset-0 bg-gradient-primary opacity-80"></div>

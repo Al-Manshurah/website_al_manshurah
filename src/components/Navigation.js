@@ -61,10 +61,10 @@ export default function Navigation() {
 
   return (
     <header className="bg-secondary text-white shadow-md">
-      <div className="py-7 flex items-center justify-between bg-white">
-        <div className="w-full mx-auto px-4 py-3 flex items-center justify-between text-black">
+      <div className="py-2 md:py-7 flex items-center justify-between bg-white">
+        <div className="w-full mx-auto px-4 py-1 md:py-3 flex items-center justify-center  text-black">
           {/* Logo */}
-          <div className="flex items-center justify-center gap-3">
+          <div className="flex  flex-col md:flex-row items-center justify-center gap-3">
             <div className="p-2 bg-gradient-primary rounded-[100%] scale-[0.8] md:scale[1]">
               <div className="p-1 bg-base rounded-[100%] overflow-hidden">
                 <Image
@@ -75,9 +75,9 @@ export default function Navigation() {
                 />
               </div>
             </div>
-            <div className="flex flex-col gap-0 relative">
+            <div className="flex flex-col gap-0 relative justify-center items-center">
               <svg
-                className="absolute right-0 left-0 top-4"
+                className="absolute right-0 left-0 md:top-4 top-2 -ml-4"
                 width="250"
                 height="19"
                 viewBox="0 0 250 19"
@@ -107,10 +107,10 @@ export default function Navigation() {
           {/* Hamburger Button (Tablet & Mobile only) */}
           <button
             onClick={toggleDrawer}
-            className="lg:hidden p-2 text-primary hover:text-secondary transition"
+            className="lg:hidden p-2 text-primary hover:text-secondary transition fixed md:relative right-0 top-0 bg-white/80 z-50"
             aria-label="Toggle menu"
           >
-            <RiMenuLine size={32} />
+            <RiMenuLine size={24} />
           </button>
         </div>
       </div>
@@ -198,12 +198,12 @@ export default function Navigation() {
 
         {/* Drawer Panel */}
         <div
-          className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-gradient-primary text-white z-50 lg:hidden transform transition-transform duration-300 ease-in-out overflow-y-auto ${drawerOpen ? "translate-x-0" : "translate-x-full"
+          className={`fixed top-0 right-0 h-full w-full bg-gradient-primary text-white z-50 lg:hidden transform transition-transform duration-300 ease-in-out overflow-y-auto ${drawerOpen ? "translate-x-0" : "translate-x-full"
             }`}
         >
           {/* Drawer Header */}
           <div className="flex items-center justify-between p-4 border-b border-white/20">
-            <h2 className="text-xl font-bold">Menu</h2>
+            <h2 className="text-xl font-bold uppercase">Menu</h2>
             <button
               onClick={closeDrawer}
               className="p-2 hover:bg-white/10 rounded-lg transition"
@@ -214,12 +214,12 @@ export default function Navigation() {
           </div>
 
           {/* Drawer Menu Items */}
-          <nav className="p-4">
-            <ul className="space-y-2">
+          <nav className="p-6">
+            <ul className="space-y-4">
               {menus.map((menu) => {
                 const activeClass = isActive(menu.href)
-                  ? "bg-secondary text-accent2"
-                  : "hover:bg-white/10";
+                  ? "bg-secondary text-accent2 border border-accent2/30"
+                  : "hover:bg-primary/80 bg-primary/40 border border-primary/40 text-white/70";
 
                 if (menu.submenu) {
                   return (
@@ -236,8 +236,8 @@ export default function Navigation() {
                       </button>
                       {/* Submenu */}
                       <ul
-                        className={`ml-4 mt-2 space-y-1 overflow-hidden transition-all duration-300 ${mobileSubmenuOpen === menu.name
-                          ? "max-h-96 opacity-100"
+                        className={`bg-primary/10 rounded-lg space-y-1 overflow-hidden transition-all duration-300 ${mobileSubmenuOpen === menu.name
+                          ? "max-h-120 opacity-100"
                           : "max-h-0 opacity-0"
                           }`}
                       >
@@ -246,7 +246,7 @@ export default function Navigation() {
                             <Link
                               href={sub.href}
                               onClick={closeDrawer}
-                              className={`block px-4 py-2 rounded-lg transition ${isActive(sub.href)
+                              className={`block px-4 py-4 rounded-lg transition border-b border-primary/40 ${isActive(sub.href)
                                 ? "bg-secondary text-accent2"
                                 : "hover:bg-white/10"
                                 }`}
@@ -281,7 +281,7 @@ export default function Navigation() {
                   key={btn.name}
                   href={btn.href}
                   onClick={closeDrawer}
-                  className="flex items-center gap-3 px-4 py-3 bg-accent2 hover:bg-accent2/80 rounded-lg transition font-semibold"
+                  className="flex items-center gap-3 px-4 py-3 bg-white hover:bg-white/80 rounded-xl transition text-primary text-[14px]"
                 >
                   {btn.icon}
                   <span>{btn.name}</span>
