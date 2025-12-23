@@ -1,4 +1,4 @@
-import { RiArrowDropDownLine, RiCustomerServiceLine} from '@remixicon/react';
+import { RiArrowDropDownLine, RiCustomerServiceLine } from '@remixicon/react';
 
 export const utilRoutes = [
   { name: "Beranda", href: "/", exact: true },
@@ -29,6 +29,7 @@ export const utilRoutes = [
       { label: "Rencana Tanah Waqaf", href: "/donasi/waqaf" },
     ],
   },
+  { name: "Artikel", href: "/artikel" },
   { name: "Tentang", href: "/tentang" },
   {
     name: "Hubungi Kami",
