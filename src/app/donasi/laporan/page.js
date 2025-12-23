@@ -139,22 +139,6 @@ export default function LaporanKeuanganPage() {
                     </div>
                 </div>
             </section>
-
-            {/* CTA Section */}
-            <section className="!py-20 bg-gradient-primary text-white">
-                <div className="max-w-4xl mx-auto px-6 text-center">
-                    <div className="text-6xl mb-6">🤲</div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 fKufam">
-                        Dukung Program Dakwah Kami
-                    </h2>
-                    <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-                        Infaq dan sedekah Anda sangat berarti untuk kelangsungan program dakwah dan kajian ilmiah
-                    </p>
-                    <button className="bg-white text-primary px-10 py-4 rounded-xl font-bold hover:bg-gold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-                        Donasi Sekarang
-                    </button>
-                </div>
-            </section>
         </>
     );
 }

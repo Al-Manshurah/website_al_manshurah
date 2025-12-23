@@ -127,6 +127,75 @@ export default function Kajian() {
                     </div>
                 </section>
 
+                {/* Poster Section */}
+                <section className="!py-16 bg-white">
+                    <div className="max-w-6xl mx-auto px-6">
+                        <div className="text-center mb-12">
+                            <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full">
+                                <span className="text-sm font-semibold text-primary">Poster Jadwal</span>
+                            </div>
+                            <h2 className="text-4xl font-bold text-primary mb-4 fKufam">
+                                Poster Kajian Rutin
+                            </h2>
+                            <p className="text-gray-600 max-w-2xl mx-auto">
+                                Download poster jadwal kajian untuk dibagikan atau ditempel di masjid
+                            </p>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-8">
+                            {/* Poster 1 */}
+                            <div className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border-2 border-primary/10 hover:border-primary/30">
+                                <div className="aspect-[3/4] bg-gradient-to-br from-primary/10 to-accent1/10 flex items-center justify-center">
+                                    <div className="text-center p-8">
+                                        <div className="text-8xl mb-4">📅</div>
+                                        <div className="text-2xl font-bold text-primary mb-2">Poster Jadwal 1</div>
+                                        <div className="text-sm text-gray-600">Kajian Mingguan</div>
+                                    </div>
+                                </div>
+                                <div className="p-6 bg-gray-50">
+                                    <h3 className="font-bold text-primary mb-3">Jadwal Kajian Mingguan</h3>
+                                    <p className="text-sm text-gray-600 mb-4">
+                                        Poster lengkap jadwal kajian rutin Al-Manshurah
+                                    </p>
+                                    <div className="flex gap-3">
+                                        <button className="flex-1 bg-gradient-primary text-white px-4 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+                                            📥 Download
+                                        </button>
+                                        <button className="px-4 py-3 border-2 border-primary text-primary rounded-xl font-semibold hover:bg-primary hover:text-white transition-all duration-300">
+                                            👁️ Lihat
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Poster 2 */}
+                            <div className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border-2 border-primary/10 hover:border-primary/30">
+                                <div className="aspect-[3/4] bg-gradient-to-br from-secondary/10 to-accent2/10 flex items-center justify-center">
+                                    <div className="text-center p-8">
+                                        <div className="text-8xl mb-4">⭐</div>
+                                        <div className="text-2xl font-bold text-secondary mb-2">Poster Jadwal 2</div>
+                                        <div className="text-sm text-gray-600">Kajian Bulanan</div>
+                                    </div>
+                                </div>
+                                <div className="p-6 bg-gray-50">
+                                    <h3 className="font-bold text-secondary mb-3">Jadwal Kajian Khusus</h3>
+                                    <p className="text-sm text-gray-600 mb-4">
+                                        Poster jadwal kajian bulanan dan program khusus
+                                    </p>
+                                    <div className="flex gap-3">
+                                        <button className="flex-1 bg-gradient-to-r from-secondary to-accent2 text-white px-4 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+                                            📥 Download
+                                        </button>
+                                        <button className="px-4 py-3 border-2 border-secondary text-secondary rounded-xl font-semibold hover:bg-secondary hover:text-white transition-all duration-300">
+                                            👁️ Lihat
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 {/* Content Section */}
                 <section className="!py-16">
                     <div className="max-w-6xl mx-auto px-6">

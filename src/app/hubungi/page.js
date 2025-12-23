@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
+import { getWhatsAppLink } from '@/utils/utilStrings';
 
 export default function HubungiPage() {
     const [formData, setFormData] = useState({
@@ -40,7 +41,7 @@ export default function HubungiPage() {
             icon: "📱",
             title: "WhatsApp",
             content: "+62 812-3456-7890",
-            link: "https://wa.me/6281234567890"
+            link: getWhatsAppLink('Assalamualaikum, saya ingin bertanya tentang Al-Manshurah')
         },
         {
             icon: "🕌",
@@ -274,7 +275,7 @@ export default function HubungiPage() {
                         Hubungi kami melalui WhatsApp untuk mendapatkan respon yang lebih cepat
                     </p>
                     <a
-                        href="https://wa.me/6281234567890"
+                        href={getWhatsAppLink('Assalamualaikum, saya ingin konsultasi dengan Al-Manshurah')}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-white text-primary px-10 py-4 rounded-xl font-bold hover:bg-gold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"

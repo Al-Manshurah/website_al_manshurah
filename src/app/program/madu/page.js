@@ -1,6 +1,9 @@
 'use client';
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
+import { getWhatsAppLink } from '@/utils/utilStrings';
+import { RiWhatsappLine } from '@remixicon/react';
+import Link from 'next/link';
 
 export default function MaduPage() {
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -90,7 +93,8 @@ export default function MaduPage() {
                                 Madu murni 100% alami dari sumber terpercaya. Setiap pembelian mendukung program dakwah Al-Manshurah
                             </p>
                             <div className="flex gap-4 flex-wrap">
-                                <button className="bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-gold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+                                <button className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-xl font-bold hover:bg-gold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+                                    <span>📱</span>
                                     Pesan Sekarang
                                 </button>
                                 <button className="bg-white/20 backdrop-blur-sm border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-primary transition-all duration-300">
@@ -206,9 +210,14 @@ export default function MaduPage() {
                                             <div className="text-2xl font-bold text-primary">{product.price}</div>
                                             <div className="text-xs text-gray-500">{product.stock}</div>
                                         </div>
-                                        <button className="bg-gradient-primary text-white px-6 py-3 rounded-xl font-bold hover:shadow-lg transition-all duration-300 hover:scale-105">
+                                        <a
+                                            href={getWhatsAppLink(`Assalamualaikum, saya ingin memesan ${product.name} (${product.size}) seharga ${product.price}`)}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="bg-gradient-primary text-white px-6 py-3 rounded-xl font-bold hover:shadow-lg transition-all duration-300 hover:scale-105 inline-block text-center"
+                                        >
                                             Pesan
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -271,16 +280,21 @@ export default function MaduPage() {
                     </p>
                     <div className="flex gap-4 justify-center flex-wrap">
                         <a
-                            href="https://wa.me/6281234567890?text=Assalamualaikum, saya ingin memesan madu"
+                            href={getWhatsAppLink('Assalamualaikum, saya ingin memesan madu Al-Manshurah')}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block bg-white text-primary px-10 py-4 rounded-xl font-bold hover:bg-gold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                            className="inline-flex items-center gap-2 bg-white text-primary px-10 py-4 rounded-xl font-bold hover:bg-gold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                         >
+                            <span>📱</span>
                             Pesan via WhatsApp
                         </a>
-                        <button className="bg-white/20 backdrop-blur-sm border-2 border-white text-white px-10 py-4 rounded-xl font-bold hover:bg-white hover:text-primary transition-all duration-300">
+                        <Link
+                            href="/program/madu/cara-pemesanan"
+                            className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border-2 border-white text-white px-10 py-4 rounded-xl font-bold hover:bg-white hover:text-primary transition-all duration-300"
+                        >
+                            <RiWhatsappLine className="w-6 h-6" />
                             Lihat Cara Pemesanan
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>

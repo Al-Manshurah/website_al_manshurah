@@ -1,5 +1,6 @@
 'use client';
 import Navigation from '@/components/Navigation';
+import { getWhatsAppLink } from '@/utils/utilStrings';
 
 export default function TentangPage() {
   const values = [
@@ -9,9 +10,14 @@ export default function TentangPage() {
       description: "Berlandaskan pada Al-Qur'an, Hadits, dan pemahaman salafus shalih"
     },
     {
-      icon: "🤝",
-      title: "Ukhuwah Islamiyah",
-      description: "Membangun persaudaraan yang kokoh sesama muslim"
+      icon: "🤲",
+      title: "Isti'anah kepada Allah",
+      description: "Memohon pertolongan hanya kepada Allah dalam setiap urusan"
+    },
+    {
+      icon: "📚",
+      title: "Kurikulum Rabbaniyyin",
+      description: "Pendidikan sistematis dari hal-hal dasar sebelum hal-hal yang rumit dan pelik"
     },
     {
       icon: "💎",
@@ -22,6 +28,11 @@ export default function TentangPage() {
       icon: "🌟",
       title: "Amanah",
       description: "Terpercaya dalam mengelola program dan dana umat"
+    },
+    {
+      icon: "🤝",
+      title: "Ukhuwah Islamiyah",
+      description: "Membangun persaudaraan yang kokoh sesama muslim"
     }
   ];
 
@@ -104,7 +115,7 @@ export default function TentangPage() {
                 <span className="text-sm font-semibold text-primary">Profil Kami</span>
               </div>
               <h2 className="text-4xl font-bold text-primary mb-6 fKufam">
-                Melayani Umat Sejak 2010
+                Meniti Jalan Salafus Shalih
               </h2>
               <p className="text-gray-700 leading-relaxed mb-6">
                 Al-Manshurah adalah Halaqah Ilmu yang didirikan dengan tujuan mulia untuk menyebarkan
@@ -133,7 +144,7 @@ export default function TentangPage() {
       </section>
 
       {/* Visi Misi Section */}
-      <section className="!py-20 bg-white">
+      < section className="!py-20 bg-white" >
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full">
@@ -189,10 +200,10 @@ export default function TentangPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Values Section */}
-      <section className="!py-20 bg-gradient-to-br from-primary/5 to-white">
+      < section className="!py-20 bg-gradient-to-br from-primary/5 to-white" >
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full">
@@ -217,26 +228,35 @@ export default function TentangPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* CTA Section */}
       <section className="!py-20 bg-gradient-primary text-white">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="text-6xl mb-6">🤝</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 fKufam">
-            Bergabunglah Bersama Kami
+            Ingin Bertanya Mengenai Sesuatu atau Mengenal Kami Lebih Dekat?
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Mari bersama-sama memperkuat dakwah Islam dan membangun ukhuwah Islamiyah
-            yang kokoh melalui ilmu dan amal shalih
+            Apabila ada yang ingin ditanyakan atau ingin ikut berkontribusi dalam dakwah,
+            silakan hubungi kami melalui WhatsApp atau kirim pesan ke email kami
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <button className="bg-white text-primary px-10 py-4 rounded-xl font-bold hover:bg-gold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
-              Lihat Program Kajian
-            </button>
-            <button className="bg-white/20 backdrop-blur-sm border-2 border-white text-white px-10 py-4 rounded-xl font-bold hover:bg-white hover:text-primary transition-all duration-300">
-              Hubungi Kami
-            </button>
+            <a
+              href={getWhatsAppLink('Assalamualaikum, saya ingin bertanya tentang Al-Manshurah')}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white text-primary px-10 py-4 rounded-xl font-bold hover:bg-gold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+            >
+              <span>💬</span>
+              Hubungi via WhatsApp
+            </a>
+            <a
+              href="mailto:info@almanshurah.org"
+              className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm border-2 border-white text-white px-10 py-4 rounded-xl font-bold hover:bg-white hover:text-primary transition-all duration-300"
+            >
+              <span>📧</span>
+              Kirim Email
+            </a>
           </div>
         </div>
       </section>
