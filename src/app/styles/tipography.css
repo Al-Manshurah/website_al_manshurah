@@ -1,0 +1,120 @@
+.text-h1 {
+  font-family: var(--font-kufam), sans-serif;
+  font-weight: 700;
+  /* Bold */
+  font-style: normal;
+  /* Italic */
+  font-size: 80px;
+  /* Ukuran font */
+  line-height: 1.2;
+  /* Auto biasanya 120% default */
+  letter-spacing: -0.04em;
+  /* -4% = -0.04em */
+}
+
+.text-h3 {
+  font-family: var(--font-kufam), sans-serif;
+  font-weight: 700;
+  /* Bold */
+  font-style: normal;
+  /* Italic */
+  font-size: 48px;
+  line-height: normal;
+  /* atau 1.2 kalau mau konsisten */
+  letter-spacing: -0.03em;
+  /* -3% */
+}
+
+.text-subtitle-1 {
+  font-family: var(--font-lora), serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: normal;
+  /* atau bisa 1.2–1.5 sesuai kebutuhan */
+  letter-spacing: 0;
+}
+
+.text-subtitle-2 {
+  font-family: var(--font-lora), serif;
+  font-weight: 700;
+  /* Bold */
+  font-size: 30px;
+  line-height: normal;
+  /* default normal */
+  letter-spacing: 0em;
+}
+
+.text-label-item {
+  font-family: var(--font-lora), serif;
+  font-weight: 500;
+  /* Medium */
+  font-size: 24px;
+  line-height: normal;
+  /* default normal */
+  letter-spacing: 0em;
+}
+
+
+.text-text-menu {
+  font-family: var(--font-lora), serif;
+  font-weight: 600;
+  /* SemiBold */
+  font-size: 14px;
+  line-height: normal;
+  /* atau 1.4 jika mau lebih rapih */
+  letter-spacing: 0;
+}
+
+/* Tablet Responsive Typography */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .text-h1 {
+    font-size: 56px;
+  }
+
+  .text-h3 {
+    font-size: 44px;
+    line-height: 52px
+  }
+
+  .text-subtitle-1 {
+    font-size: 18px;
+    line-height: 22px
+  }
+
+  .text-subtitle-2 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .text-label-item {
+    font-size: 14px;
+    line-height: 20px
+  }
+}
+
+/* Mobile Responsive Typography (same as tablet) */
+@media (max-width: 767px) {
+  .text-h1 {
+    font-size: 40px;
+  }
+
+  .text-h3 {
+    font-size: 44px;
+    line-height: 52px
+  }
+
+  .text-subtitle-1 {
+    font-size: 16px;
+    line-height: 22px
+  }
+
+  .text-subtitle-2 {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .text-label-item {
+    font-size: 14px;
+    line-height: 20px
+  }
+}
