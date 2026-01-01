@@ -11,11 +11,11 @@ const nextConfig = {
 
   // UPLOAD GITHUB
   // UPLOAD GITHUB
-  // UPLOAD GITHUB
-  basePath: process.env.GITHUB_PAGES ? "/website_al_manshurah" : '',
-  assetPrefix: process.env.GITHUB_PAGES ? "/website_al_manshurah/" : '',
+  // UPLOAD GITHUB (Only enable basePath if NOT on Vercel)
+  basePath: (process.env.GITHUB_PAGES && !process.env.VERCEL) ? "/website_al_manshurah" : '',
+  assetPrefix: (process.env.GITHUB_PAGES && !process.env.VERCEL) ? "/website_al_manshurah/" : '',
   env: {
-    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_PAGES ? "/website_al_manshurah" : '',
+    NEXT_PUBLIC_BASE_PATH: (process.env.GITHUB_PAGES && !process.env.VERCEL) ? "/website_al_manshurah" : '',
   },
 };
 
