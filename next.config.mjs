@@ -11,10 +11,11 @@ const nextConfig = {
 
   // UPLOAD GITHUB
   // UPLOAD GITHUB
-  basePath: process.env.GITHUB_PAGES ? "/website_al_manshurah_publish" : '',
-  assetPrefix: process.env.GITHUB_PAGES ? "/website_al_manshurah_publish/" : '',
+  // UPLOAD GITHUB
+  basePath: process.env.GITHUB_PAGES ? "/website_al_manshurah" : '',
+  assetPrefix: process.env.GITHUB_PAGES ? "/website_al_manshurah/" : '',
   env: {
-    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_PAGES ? "/website_al_manshurah_publish" : '',
+    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_PAGES ? "/website_al_manshurah" : '',
   },
 };
 
