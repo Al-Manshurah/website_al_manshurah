@@ -1,0 +1,49 @@
+.text-h1 {
+  font-family: "Kufam", sans-serif;
+  font-weight: 700;         /* Bold */
+  font-style: normal;       /* Italic */
+  font-size: 80px;          /* Ukuran font */
+  line-height: 1.2;         /* Auto biasanya 120% default */
+  letter-spacing: -0.04em;  /* -4% = -0.04em */
+}
+
+.text-h3 {
+  font-family: "Kufam", sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 48px;
+  line-height: normal; /* atau 1.2 kalau mau konsisten */
+  letter-spacing: -0.03em; /* -3% */
+}
+
+.text-subtitle-1 {
+  font-family: "Lora", serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: normal; /* atau bisa 1.2–1.5 sesuai kebutuhan */
+  letter-spacing: 0;
+}
+
+.text-subtitle-2 {
+  font-family: "Lora", serif;
+  font-weight: 700;      /* Bold */
+  font-size: 30px;
+  line-height: normal;   /* default normal */
+  letter-spacing: 0em;
+}
+
+.text-label-item {
+  font-family: "Lora", serif;
+  font-weight: 500;      /* Medium */
+  font-size: 24px;
+  line-height: normal;   /* default normal */
+  letter-spacing: 0em;
+}
+
+
+.text-text-menu {
+  font-family: "Lora", serif;
+  font-weight: 600; /* SemiBold */
+  font-size: 14px;
+  line-height: normal; /* atau 1.4 jika mau lebih rapih */
+  letter-spacing: 0;
+}
